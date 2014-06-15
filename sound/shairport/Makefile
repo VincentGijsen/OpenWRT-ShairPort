@@ -30,12 +30,12 @@ define Package/shairport-trunk/Default
 endef
 
 
-define Package/shairport
+define Package/shairport-trunk
   $(Package/shairport/Default)
   DEPENDS:= +libopenssl +alsa-lib
 endef
 
-define Package/shairport/description
+define Package/shairport-trunk/description
   Shairport TRUNK version, use TINYSVCMDNS
 endef
 
@@ -51,4 +51,4 @@ define Package/shairport-trunk/install
 endef
 
 
-$(eval $(call BuildPackage,shairport))
+$(eval $(call BuildPackage,shairport-trunk))
