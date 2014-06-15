@@ -31,7 +31,7 @@ endef
 
 
 define Package/shairport-trunk
-  $(Package/shairport/Default)
+  $(Package/shairport-trunk/Default)
   DEPENDS:= +libopenssl +alsa-lib
 endef
 
