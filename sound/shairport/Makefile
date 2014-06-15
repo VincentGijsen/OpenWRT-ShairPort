@@ -12,8 +12,8 @@ PKG_VERSION:=0.05
 PKG_RELEASE:=$(PKG_SOURCE_VERSION)
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=git://github.com/mikejuni/shairport.git
-PKG_SOURCE_VERSION:=6949aef47c071df085d7580309c9779e3fc9fd64
+PKG_SOURCE_URL:=git://github.com/abrasive/shairport
+PKG_SOURCE_VERSION:=master
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 
@@ -22,26 +22,25 @@ PKG_BUILD_PARALLEL:=1
 include $(INCLUDE_DIR)/package.mk
 
 
-define Package/shairport/Default
+define Package/shairport-trunk/Default
   SECTION:=sound
   CATEGORY:=Sound
-  TITLE:=ShairPort
+  TITLE:=ShairPort-trunk
   URL:=http://mafipulation.org/
 endef
 
 
 define Package/shairport
   $(Package/shairport/Default)
-  DEPENDS:= +libopenssl +alsa-lib +libavahi-client +avahi-utils
+  DEPENDS:= +libopenssl +alsa-lib
 endef
 
 define Package/shairport/description
-  ShairPort is server software that implements the RAOP protocol for
-  playback of music streamed from a compatible remote client.
+  Shairport TRUNK version, use TINYSVCMDNS
 endef
 
 
-define Package/shairport/install
+define Package/shairport-trunk/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/shairport $(1)/usr/bin/
 	$(INSTALL_DIR) $(1)/etc/init.d

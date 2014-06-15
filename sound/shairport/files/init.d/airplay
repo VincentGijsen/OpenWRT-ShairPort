@@ -29,16 +29,16 @@ handle_airplay() {
 	then
 		if [ "x$password" == "x" ]
 		then
-			shairport -a "$bname" -b $initbuf -o $port --alsa_pcm=$pcm --alsa_ctl=$ctl --alsa_volume=$volume
+			shairport -a "$bname" -b $initbuf -o $port --alsa_pcm=$pcm --alsa_ctl=$ctl --alsa_volume=$volume -m tinysvcmdns
 		else
-			shairport -a "$bname" -b $initbuf -o $port -p $password --alsa_pcm=$pcm --alsa_ctl=$ctl --alsa_volume=$volume
+			shairport -a "$bname" -b $initbuf -o $port -p $password --alsa_pcm=$pcm --alsa_ctl=$ctl --alsa_volume=$volume -m tinysvcmdns
 		fi	
 	fi
 	if [ "x$password" == "x" ]
 	then
-		shairport -a "$bname" -b $initbuf -o $port $extra --alsa_pcm=$pcm --alsa_ctl=$ctl --alsa_volume=$volume
+		shairport -a "$bname" -b $initbuf -o $port $extra --alsa_pcm=$pcm --alsa_ctl=$ctl --alsa_volume=$volume -m tinysvcmdns
 	else
-		shairport -a "$bname" -b $initbuf -o $port -p $password $extra --alsa_pcm=$pcm --alsa_ctl=$ctl --alsa_volume=$volume
+		shairport -a "$bname" -b $initbuf -o $port -p $password $extra --alsa_pcm=$pcm --alsa_ctl=$ctl --alsa_volume=$volume -m tinysvcmdns
 	fi
 }
 
